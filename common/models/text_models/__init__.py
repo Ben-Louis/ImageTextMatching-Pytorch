@@ -1,0 +1,1 @@
+from .bert import bert_inference_gen
