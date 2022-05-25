@@ -30,3 +30,17 @@ tqdm
 After training for 8 epochs, the model can achieve NDCG@5 with 0.59~0.6 on testset. 
 If you normalize the similarity score for each caption over all images with Softmax, 
 the result can be further improved to 0.61+.
+
+
+### Inference
+ 
+1. Download pretrained model
+
+comming soon...
+
+2. run inference
+
+```bash
+cd image+name_caption_infonce
+python inference.py 
+```

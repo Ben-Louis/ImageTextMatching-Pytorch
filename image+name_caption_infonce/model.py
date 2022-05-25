@@ -35,7 +35,9 @@ class Model(nn.Module):
 
     def forward_text(self, text, post_ffn=False):
         token = self.tokenizer(text)
-        seq_embedding, text_embedding = self.bert(**token)
+        output = self.bert(**token)
+        seq_embedding = output['last_hidden_state']
+        text_embedding = output['pooler_output']
         text_embedding = self.norm(text_embedding)
         if post_ffn:
             return text_embedding + self.ffn(text_embedding)
